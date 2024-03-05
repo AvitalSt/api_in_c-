@@ -1,0 +1,12 @@
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\bin\Debug\net6.0\Airport.Core.deps.json
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\bin\Debug\net6.0\Airport.Core.dll
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\bin\Debug\net6.0\Airport.Core.pdb
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\Airport.Core.csproj.AssemblyReference.cache
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\Airport.Core.GeneratedMSBuildEditorConfig.editorconfig
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\Airport.Core.AssemblyInfoInputs.cache
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\Airport.Core.AssemblyInfo.cs
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\Airport.Core.csproj.CoreCompileInputs.cache
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\Airport.Core.dll
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\refint\Airport.Core.dll
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\Airport.Core.pdb
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Airport.Core\obj\Debug\net6.0\ref\Airport.Core.dll

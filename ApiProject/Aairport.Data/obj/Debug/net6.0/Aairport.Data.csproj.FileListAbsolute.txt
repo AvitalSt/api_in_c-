@@ -1,0 +1,17 @@
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.csproj.AssemblyReference.cache
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.GeneratedMSBuildEditorConfig.editorconfig
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.AssemblyInfoInputs.cache
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.AssemblyInfo.cs
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.csproj.CoreCompileInputs.cache
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\bin\Debug\net6.0\Aairport.Data.deps.json
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\bin\Debug\net6.0\Aairport.Data.dll
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\bin\Debug\net6.0\Aairport.Data.pdb
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\bin\Debug\net6.0\Airport.Core.dll
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\bin\Debug\net6.0\Airport.Core.pdb
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.csproj.CopyComplete
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.dll
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\refint\Aairport.Data.dll
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.pdb
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\ref\Aairport.Data.dll
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\bin\Debug\net6.0\Aairport.Data.runtimeconfig.json
+Y:\תשפד\כיתות ה ו\קמאטק שנה ב\אביטל שטיינמץ\c#\new_api\ApiProject\Aairport.Data\obj\Debug\net6.0\Aairport.Data.genruntimeconfig.cache
