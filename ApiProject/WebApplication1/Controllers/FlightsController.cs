@@ -23,43 +23,43 @@ namespace WebApplication1.Controllers
 
         // GET: api/<FlightsController>
         [HttpGet]
-        public ActionResult<Flight> Get()
+        public async Task<ActionResult<Flight>> Get()
         {
-            var listFlight = _flightService.GettAll();
+            var listFlight = await _flightService.GettAllAsync();
             var newListFlight=_mapper.Map<IEnumerable<FlightDto>>(listFlight);
             return Ok(newListFlight);
         }
 
         // GET api/<FlightsController>/5
         [HttpGet("{id}")]
-        public ActionResult Get(int id)
+        public async Task<ActionResult> Get(int id)
         {
-            var flight= _flightService.GetById(id);
+            var flight= await _flightService.GetByIdAsync(id);
             var newFlight= _mapper.Map<FlightDto>(flight);
             return Ok(newFlight);
         }
 
         // POST api/<FlightsController>
         [HttpPost]
-        public void Post([FromBody] FlightDto f)
+        public async Task Post([FromBody] FlightDto f)
         {
             var filghtToAdd = _mapper.Map<Flight>(f);
-            _flightService.PostNewFlight(filghtToAdd);
+            await _flightService.PostNewFlightAsync(filghtToAdd);
         }
 
         // PUT api/<FlightsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] FlightDto f)
+        public async Task Put(int id, [FromBody] FlightDto f)
         {
             var filghtToAdd = _mapper.Map<Flight>(f);
-            _flightService.PutFlight(id, filghtToAdd );
+            await _flightService.PutFlightAsync(id, filghtToAdd );
         }
 
         // DELETE api/<FlightsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            _flightService.DeleteFlight(id);
+            await _flightService.DeleteFlightAsync(id);
         }
     }
 }

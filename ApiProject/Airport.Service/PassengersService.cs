@@ -22,38 +22,35 @@ namespace Airport.Service
             _passengerRepository = passengerRepository;
         }
 
-        public List<Passenger> GettAll()
+        public async Task<IEnumerable<Passenger>>GettAllAsync()
         {
-            return _passengerRepository.GetList().ToList();
+            return await _passengerRepository.GetListAsync();
         }
-        public Passenger GetById(int id)
+        public async Task<Passenger> GetByIdAsync(int id)
         {
-            Passenger foundId = _passengerRepository.GetList().Find(x => x.Id == id);
+            var list = await _passengerRepository.GetListAsync();
+            Passenger foundId = list.First(x => x.Id == id);
             if (foundId == null)
             {
                 return null;
             }
             return foundId;
         }
-        public void PostNewPassenger(Passenger p)
+        public async Task PostNewPassengerAsync(Passenger p)
         {
-            _passengerRepository.PostPassengerAsync(p);
+            await _passengerRepository.PostPassengerAsync(p);
             CountPassenger++;
         }
-        public void PutPassenger(int Id, Passenger P)
+        public async Task PutPassengerAsync(int Id, Passenger P)
         {
-            int index = _passengerRepository.GetList().FindIndex( x => x.Id == Id);
-            if (index != -1)
-            {
-                _passengerRepository.UpdatePassengerAsync(index, P);
-            }
+             await _passengerRepository.UpdatePassengerAsync(Id, P);
         }
-        public void DeletePassenger(int Id)
+        public async Task DeletePassengerAsync(int Id)
         {
-            int index = _passengerRepository.GetList().FindIndex( x => x.Id == Id);
-            if (index != -1)
+            var index = await GetByIdAsync(Id);
+            if (index != null)
             {
-                _passengerRepository.RemovePassengerAsync(index);
+                await _passengerRepository.RemovePassengerAsync(index);
             }
         }
     }

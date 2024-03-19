@@ -22,43 +22,43 @@ namespace WebApplication1.Controllers
         }
         // GET: api/<PassengersController>
         [HttpGet]
-        public ActionResult<Passenger> Get()
+        public async Task<ActionResult<Passenger>> Get()
         {
-            var listPassenger= _passengerService.GettAll();
+            var listPassenger= await _passengerService.GettAllAsync();
             var newListPassenger = _mapper.Map<IEnumerable<PassengerDto>>(listPassenger);
             return Ok(newListPassenger);
         }
 
         // GET api/<PassengersController>/5
         [HttpGet("{id}")]
-        public ActionResult Get(int id)
+        public async Task<ActionResult> Get(int id)
         {
-           var passenger= _passengerService.GetById(id);
+           var passenger= await _passengerService.GetByIdAsync(id);
            var newPassenger = _mapper.Map<PassengerDto>(passenger);
             return Ok(newPassenger);
         }
 
         // POST api/<PassengersController>
         [HttpPost]
-        public void Post([FromBody] PassengerDto P)
+        public async Task Post([FromBody] PassengerDto P)
         {
             var passengerToAdd = _mapper.Map<Passenger>(P);
-            _passengerService.PostNewPassenger(passengerToAdd);
+            await _passengerService.PostNewPassengerAsync(passengerToAdd);
         }
 
         // PUT api/<PassengersController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] PassengerDto P)
+        public async Task Put(int id, [FromBody] PassengerDto P)
         {
             var passengerToAdd = _mapper.Map<Passenger>(P);
-            _passengerService.PutPassenger(id, passengerToAdd);
+            await _passengerService.PutPassengerAsync(id, passengerToAdd);
         }
 
         // DELETE api/<PassengersController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            _passengerService.DeletePassenger(id);
+            await _passengerService.DeletePassengerAsync(id);
         }
     }
 }

@@ -21,40 +21,36 @@ namespace Airport.Service
             _flightRepository = flightRepository;
         }
 
-        
-
-        public List<Flight> GettAll()
+        public async Task<IEnumerable<Flight>> GettAllAsync()
         {
-          return _flightRepository.GetList();
+          return await _flightRepository.GetListAsync();
         }
-        public Flight GetById( int id)
+        public async Task<Flight> GetByIdAsync( int id)
         {
-            Flight foundId = _flightRepository.GetList().Find(x => x.Id == id);
+            var list = await _flightRepository.GetListAsync();
+            Flight foundId = list.First(x => x.Id == id);
             if (foundId == null)
             {
-                return null;
+                return  null;
             }
             return foundId;
         }
-        public void PostNewFlight(Flight f)
+        public async Task PostNewFlightAsync(Flight f)
         {
-            _flightRepository.PostFlightAsync(f);
             CountFlight++;
+            await _flightRepository.PostFlightAsync(f);
         }
-        public void PutFlight(int Id, Flight f)
+        public async Task PutFlightAsync(int Id, Flight f)
         {
-            int index = _flightRepository.GetList().FindIndex( x => x.Id == Id);
-            if(index != -1)
-            {
-                _flightRepository.UpdateFlightAsync(index, f);
-            }
+             await _flightRepository.UpdateFlightAsync(Id, f);  
         }
-        public void DeleteFlight(int Id)
+
+        public async Task DeleteFlightAsync(int Id)
         {
-            var index = GetById(Id);
+            var index =await GetByIdAsync(Id);
             if (index != null)
             {
-                _flightRepository.RemoveFlightAsync(index);
+               await _flightRepository.RemoveFlightAsync(index);
             }
         }
     }

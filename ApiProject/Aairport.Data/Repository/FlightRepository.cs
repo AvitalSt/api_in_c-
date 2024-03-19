@@ -16,26 +16,31 @@ namespace Aairport.Data.Repositories
         {
             _context = context;
         }
-        public List<Flight> GetList()
+        public async Task<IEnumerable<Flight>> GetListAsync()
         {
-            return _context.Flights.Include(f => f.Passengers).ToList();
-            /*            return _context.Flights.ToList();*/
+            return await _context.Flights.Include(f => f.Passengers).ToListAsync();
 
         }
-        public async void PostFlightAsync(Flight f)
+        public async Task PostFlightAsync(Flight f)
         {
             _context.Flights.Add(f);
             await _context.SaveChangesAsync();
         }
-        public async void UpdateFlightAsync(int index, Flight f)
+        public async Task UpdateFlightAsync(int index, Flight f)
         {
-            _context.Flights.ToList()[index].Date = f.Date;
-            _context.Flights.ToList()[index].LeavingTime = f.LeavingTime;
-            _context.Flights.ToList()[index].ArrivalTime = f.ArrivalTime;
-            _context.Flights.ToList()[index].TerminalNum = f.TerminalNum;
-            await _context.SaveChangesAsync();
+            var list = await _context.Flights.ToListAsync();
+            Flight foundFlight=list.Find(f => f.Id == index);
+            if (foundFlight != null)
+            {
+                foundFlight.Date=f.Date;
+                foundFlight.LeavingTime=f.LeavingTime;
+                foundFlight.ArrivalTime=f.ArrivalTime;
+                foundFlight.TerminalNum=f.TerminalNum;
+                await _context.SaveChangesAsync();
+            }
+
         }
-        public async void RemoveFlightAsync(Flight index)
+        public async Task RemoveFlightAsync(Flight index)
         {
             _context.Flights.Remove(index);
             await _context.SaveChangesAsync();

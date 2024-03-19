@@ -9,10 +9,10 @@ namespace Airport.Core.Services
 {
     public interface IpassengerService
     {
-        public List<Passenger> GettAll();
-        Passenger GetById(int id);
-        public void PostNewPassenger(Passenger p);
-        public void PutPassenger(int Id, Passenger P);
-        public void DeletePassenger(int Id);
+        public Task<IEnumerable<Passenger>> GettAllAsync();
+        public Task<Passenger> GetByIdAsync(int id);
+        public Task PostNewPassengerAsync(Passenger p);
+        public Task PutPassengerAsync(int Id, Passenger P);
+        public Task DeletePassengerAsync(int Id);
     }
 }

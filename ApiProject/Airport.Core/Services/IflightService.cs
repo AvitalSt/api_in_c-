@@ -9,12 +9,11 @@ namespace Airport.Core.Services
 {
     public interface IflightService
     {
-        public List<Flight> GettAll();
-        Flight GetById(int id);
-
-       // Flight GetFlightById(int id);
-        public void PostNewFlight(Flight f);
-        public void PutFlight(int Id, Flight f);
-        public void DeleteFlight(int Id);
+        public Task<IEnumerable<Flight>> GettAllAsync();
+        public Task<Flight> GetByIdAsync(int id);
+        // Flight GetFlightById(int id);
+        public Task PostNewFlightAsync(Flight f);
+        public Task PutFlightAsync(int Id, Flight f);
+        public Task DeleteFlightAsync(int Id);
     }
 }
