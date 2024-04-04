@@ -22,38 +22,35 @@ namespace Airport.Service
             _ipilotRepository = ipilotRepository;
         }
 
-        public List<Pilot> GettAll()
+        public async Task<IEnumerable<Pilot>> GettAllAsync()
         {
-            return _ipilotRepository.GetList();
+            return await _ipilotRepository.GetListAsync();
         }
-        public Pilot GetById(int id)
+        public async Task<Pilot> GetByIdAsync(int id)
         {
-            Pilot foundId = _ipilotRepository.GetList().Find(x => x.Id == id);
+            var list = await _ipilotRepository.GetListAsync();
+            Pilot foundId = list.First(x => x.Id == id);
             if (foundId == null)
             {
                 return null;
             }
             return foundId;
         }
-        public void PostNewPilot(Pilot p)
+        public async Task PostNewPilotAsync(Pilot p)
         {
-            _ipilotRepository.PostPilotAsync(p);
+            await _ipilotRepository.PostPilotAsync(p);
             CountPilot++;
         }
-        public void PutPilot(int Id, Pilot p)
+        public async Task PutPilotAsync(int Id, Pilot p)
         {
-            int index = _ipilotRepository.GetList().FindIndex( x => x.Id == Id);
-            if (index != -1)
-            {
-                _ipilotRepository.UpdatePilotAsync(index, p);                
-            }
+            await _ipilotRepository.UpdatePilotAsync(Id, p);
         }
-        public void DeletePilot(int Id)
+        public async Task DeletePilotAsync(int Id)
         {
-            int index = _ipilotRepository.GetList().FindIndex( x => x.Id == Id);
-            if (index != -1)
+            var index = await GetByIdAsync(Id);
+            if (index != null)
             {
-                _ipilotRepository.RemovePilotAsync(index);
+                await _ipilotRepository.RemovePilotAsync(index);
             }
         }
     }

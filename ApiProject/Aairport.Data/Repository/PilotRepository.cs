@@ -1,4 +1,5 @@
 ﻿using Airport.Core.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,28 +16,33 @@ namespace Aairport.Data.Repositories
         {
             _context = context;
         }
-        public List<Pilot> GetList()
+        public async Task<IEnumerable<Pilot>> GetListAsync()
         {
-            return _context.Pilots.ToList();
+            return await _context.Pilots.ToListAsync();
         }
-        public async void PostPilotAsync(Pilot p)
+        public async Task PostPilotAsync(Pilot p)
         {
             _context.Pilots.Add(p);
             await _context.SaveChangesAsync();
         }
-        public async void UpdatePilotAsync(int index, Pilot p)
+        public async Task UpdatePilotAsync(int index, Pilot p)
         {
-            _context.Pilots.ToList()[index].Name = p.Name;
-            _context.Pilots.ToList()[index].NumWorker = p.NumWorker;
-            _context.Pilots.ToList()[index].Vettek = p.Vettek;
-            _context.Pilots.ToList()[index].Company = p.Company;
-            await _context.SaveChangesAsync();
+            var list = await _context.Pilots.ToListAsync();
+            Pilot foundPilot=list.Find(p=>p.Id==index);
+            if (foundPilot != null)
+            {
+                foundPilot.Name = p.Name;
+                foundPilot.NumWorker = p.NumWorker;
+                foundPilot.Vettek = p.Vettek;
+                foundPilot.Company=p.Company;
+                await _context.SaveChangesAsync();
+            }
         }
 
 
-        public async void RemovePilotAsync(int index)
+        public async Task RemovePilotAsync(Pilot index)
         {
-            _context.Pilots.Remove(_context.Pilots.ToList()[index]);
+            _context.Pilots.Remove(index);
             await _context.SaveChangesAsync();
         }
     }

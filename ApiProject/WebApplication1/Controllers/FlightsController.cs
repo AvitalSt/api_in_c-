@@ -2,6 +2,7 @@
 using Airport.Core.Services;
 using Airport.Service;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 
@@ -11,6 +12,7 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class FlightsController : ControllerBase
     {
         private readonly IflightService _flightService;

@@ -2,6 +2,7 @@
 using Airport.Core.Services;
 using Airport.Service;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 
@@ -11,6 +12,7 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PilotsController : ControllerBase
     {
         private readonly IpilotService _pilotService;
@@ -22,43 +24,43 @@ namespace WebApplication1.Controllers
         }
         // GET: api/<PilotController>
         [HttpGet]
-        public ActionResult<Pilot> Get()
+        public async Task<ActionResult<Pilot>> Get()
         {
-            var listPilot= _pilotService.GettAll();
+            var listPilot= await _pilotService.GettAllAsync();
             var newListPilot=_mapper.Map<IEnumerable<PilotDto>>(listPilot);
             return Ok(newListPilot);
         }
 
         // GET api/<PilotController>/5
         [HttpGet("{id}")]
-        public ActionResult Get(int id)
+        public async Task<ActionResult> Get(int id)
         {
-            var pilot = _pilotService.GetById(id);
+            var pilot = await _pilotService.GetByIdAsync(id);
             var newPilot=_mapper.Map<PilotDto>(pilot);
             return Ok(newPilot);
         }
 
         // POST api/<PilotController>
         [HttpPost]
-        public void Post([FromBody] PilotDto p)
+        public async Task Post([FromBody] PilotDto p)
         {
             var PilotToAdd=_mapper.Map<Pilot>(p);
-            _pilotService.PostNewPilot(PilotToAdd);
+            await _pilotService.PostNewPilotAsync(PilotToAdd);
         }
 
         // PUT api/<PilotController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] PilotDto p)
+        public async Task Put(int id, [FromBody] PilotDto p)
         {
             var PilotToAdd =_mapper.Map<Pilot>(p);
-            _pilotService.PutPilot(id, PilotToAdd);
+            await _pilotService.PutPilotAsync(id, PilotToAdd);
         }
 
         // DELETE api/<PilotController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            _pilotService.DeletePilot(id);
+            await _pilotService.DeletePilotAsync(id);
         }
     }
 }
